@@ -1,19 +1,14 @@
-# brew install python
-# brew install ghostscript
-
-# ./pdfsizeopt.single --use-multivalent=false <input.pdf>
-# creates <input.pso.pdf>
-
 class PdfOptimizer
   attr_accessor :filename, :pdfsizeopt
+  attr_accessor :output_filename
 
-  def initialize(filename)
+  def initialize(filename, output_filename = nil)
     @filename = filename
+    @output_filename = output_filename || "output/#{filename}"
     @pdfsizeopt = './vendor/pdfsizeopt.single'
   end
 
   def optimize
-    exec "#{pdfsizeopt} --use-multivalent=false #{filename}"
-    # exec "#{pdfsizeopt} --use-multivalent=false #{input_file}"
+    exec "#{pdfsizeopt} --use-multivalent=false #{filename} #{output_filename}"
   end
 end
