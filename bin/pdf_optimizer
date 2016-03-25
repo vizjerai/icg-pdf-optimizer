@@ -2,4 +2,6 @@
 
 require './lib/pdf_optimizer.rb'
 
-PdfOptimizer.new(*ARGV).optimize
+pdf = PdfOptimizer.new(*ARGV)
+pdf.optimize
+pdf.generate_thumbnail
