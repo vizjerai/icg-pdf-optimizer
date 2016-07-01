@@ -7,3 +7,4 @@
 
     brew install netpbm
     brew install jonof/kenutils/pngout
+    brew install jbig2enc
