@@ -8,3 +8,6 @@
     brew install netpbm
     brew install jonof/kenutils/pngout
     brew install jbig2enc
+
+    brew install --force imagemagick@6
+    PKG_CONFIG_PATH=/usr/local/opt/imagemagick@6/lib/pkgconfig gem install rmagick
