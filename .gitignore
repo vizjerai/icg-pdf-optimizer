@@ -1,4 +1,3 @@
-output/*.pdf
-output/*.jpg
-vendor/pdfsizeopt.single
 *.pdf
+*.jpg
+vendor/pdfsizeopt.single
