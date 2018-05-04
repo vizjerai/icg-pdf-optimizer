@@ -1,6 +1,18 @@
 # PDF Optimizer
 
-Uses pdfsizeopt to optimize a PDF and creates a thumbnail 230 pixels wide from the first PDF page.
+Uses pdfsizeopt to optimize a PDF and creates a JPG thumbnail 230 pixels wide from the first PDF page with mini_magick.
+
+## Dependencies
+
+- pdfsizeopt
+    - Python: 2.x
+    - Ghostscript
+    - netpbm
+    - jbig2enc
+    - pngwolf-zopfli
+
+- mini_magick
+    - imagemagick: 6 or 7
 
 ## Install
 
