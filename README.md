@@ -10,8 +10,9 @@ Uses pdfsizeopt to optimize a PDF and creates a thumbnail 230 pixels wide from t
     chmod +x vendor/pdfsizeopt.single
 
     brew install netpbm
-    brew install jonof/kenutils/pngout
     brew install jbig2enc
+    brew tap vizjerai/extras
+    brew install --HEAD pngwolf-zopfli
 
     brew install imagemagick
 

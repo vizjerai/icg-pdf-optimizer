@@ -17,7 +17,7 @@ class PdfOptimizer
     require 'open3'
     output_filename = File.join(output_path, filename + '.pdf')
 
-    command = "#{pdfsizeopt} --use-multivalent=false #{file_path} #{output_filename}"
+    command = "#{pdfsizeopt} --use-multivalent=false --use-image-optimizer=pngwolf #{file_path} #{output_filename}"
 
     puts "Optimizing PDF"
     ::Open3.popen3(command) do |_stdin, _stout, stderr, wait_thr|
