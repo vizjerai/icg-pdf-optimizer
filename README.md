@@ -13,8 +13,7 @@ Uses pdfsizeopt to optimize a PDF and creates a thumbnail 230 pixels wide from t
     brew install jonof/kenutils/pngout
     brew install jbig2enc
 
-    brew install --force imagemagick@6
-    PKG_CONFIG_PATH=/usr/local/opt/imagemagick@6/lib/pkgconfig gem install rmagick
+    brew install imagemagick
 
 ## Usage
 

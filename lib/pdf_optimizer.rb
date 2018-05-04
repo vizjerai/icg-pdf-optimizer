@@ -19,9 +19,10 @@ class PdfOptimizer
 
     command = "#{pdfsizeopt} --use-multivalent=false #{file_path} #{output_filename}"
 
+    puts "Optimizing PDF"
     ::Open3.popen3(command) do |_stdin, _stout, stderr, wait_thr|
       if wait_thr.value.success?
-        puts "Generated: #{output_filename}"
+        puts "  Generated: #{output_filename}"
       else
         puts stderr.read
       end
@@ -29,12 +30,15 @@ class PdfOptimizer
   end
 
   def generate_thumbnail
-    require 'rmagick'
-    output_filename = File.join(output_path, filename + '.jpg')
+    require 'mini_magick'
+    image_format = 'jpg'
+    output_filename = File.join(output_path, "#{filename}.#{image_format}")
 
-    image = ::Magick::Image.read(file_path)[0]
-    image.resize_to_fit!(thumbnail_width)
-
-    puts "Generated: #{output_filename}" if image.write(output_filename)
+    puts "Generating Thumbnail"
+    image = ::MiniMagick::Image.open(file_path)
+    image.format(image_format)
+    image.resize(thumbnail_width)
+    image.write(output_filename)
+    puts "  Generated: #{output_filename}"
   end
 end
